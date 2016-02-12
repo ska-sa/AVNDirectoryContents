@@ -24,22 +24,22 @@ struct cDirectoryContentsException : public std::exception
 
 class cDirectoryContents
 {
-	public:
-		cDirectoryContents(const std::string& strDirectoryPath, const std::string& strMask = "", bool bRecursive = false);
-		~cDirectoryContents();
+    public:
+        cDirectoryContents(const std::string& strDirectoryPath, const std::string& strMask = "", bool bRecursive = false);
+        ~cDirectoryContents();
 
-		std::vector<std::string> getContents() const;
-		std::string getPath() const;
-		std::string getMask() const;
-		bool isRecursive() const;
-	private:
-		std::string m_strDirectoryPath;
-		std::string m_strMask;
-		bool m_bRecursive;
-		std::vector<std::string> m_vstrFilenames;
+        std::vector<std::string> getContents() const;
+        std::string getPath() const;
+        std::string getMask() const;
+        bool isRecursive() const;
+    private:
+        std::string m_strDirectoryPath;
+        std::string m_strMask;
+        bool m_bRecursive;
+        std::vector<std::string> m_vstrFilenames;
 
-		void populateFileList();
-		void searchPathForFiles(std::string strDirPath);
+        void populateFileList();
+        void searchPathForFiles(std::string strDirPath);
 
 };
 
